@@ -1,0 +1,515 @@
+Program.Sub.ScreenSU.Start
+gui.F_GFMID..create
+gui.F_GFMID..caption("GFM IDs")
+gui.F_GFMID..size(8730,4200)
+gui.F_GFMID..position(0,0)
+gui.F_GFMID..event(unload,unload)
+gui.F_GFMID..alwaysontop(False)
+gui.F_GFMID..fontname("Tahoma")
+gui.F_GFMID..fontsize(8)
+gui.F_GFMID..forecolor(0)
+gui.F_GFMID..fontstyle(False,False,False,False,)
+gui.F_GFMID..BackColor(-2147483633)
+gui.F_GFMID..controlbox(True)
+gui.F_GFMID..maxbutton(False)
+gui.F_GFMID..minbutton(True)
+gui.F_GFMID..mousepointer(0)
+gui.F_GFMID..moveable(True)
+gui.F_GFMID..sizeable(False)
+gui.F_GFMID..ShowInTaskBar(True)
+gui.F_GFMID..titlebar(True)
+gui.F_GFMID.frmID.create(frame)
+gui.F_GFMID.frmID.caption("Frame")
+gui.F_GFMID.frmID.size(8025,1800)
+gui.F_GFMID.frmID.position(200,800)
+gui.F_GFMID.frmID.visible(True)
+gui.F_GFMID.frmID.borderstyle(0)
+gui.F_GFMID.frmID.fontname("Tahoma")
+gui.F_GFMID.frmID.fontsize(8)
+gui.F_GFMID.frmCust.create(frame)
+gui.F_GFMID.frmCust.caption("Frame")
+gui.F_GFMID.frmCust.parent("frmid")
+gui.F_GFMID.frmCust.size(4080,540)
+gui.F_GFMID.frmCust.position(0,0)
+gui.F_GFMID.frmCust.visible(True)
+gui.F_GFMID.frmCust.borderstyle(0)
+gui.F_GFMID.frmCust.fontname("Tahoma")
+gui.F_GFMID.frmCust.fontsize(8)
+gui.F_GFMID.frmDefault.create(frame)
+gui.F_GFMID.frmDefault.caption("Frame")
+gui.F_GFMID.frmDefault.size(8340,600)
+gui.F_GFMID.frmDefault.position(200,100)
+gui.F_GFMID.frmDefault.visible(True)
+gui.F_GFMID.frmDefault.borderstyle(0)
+gui.F_GFMID.frmDefault.fontname("Tahoma")
+gui.F_GFMID.frmDefault.fontsize(8)
+gui.F_GFMID.lblCustName.create(label,"Customer Name",True,1935,255,1,0,0,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblCustName.parent("frmcust")
+gui.F_GFMID.lblCustNo.create(label,"Customer ID",True,1935,255,1,2865,0,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblCustNo.parent("frmcust")
+gui.F_GFMID.txtCustName.create(textbox,"",True,2835,300,0,0,200,True,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtCustName.parent("frmcust")
+gui.F_GFMID.txtCudtNo.create(textbox,"",True,1215,300,0,2865,200,True,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtCudtNo.parent("frmcust")
+gui.F_GFMID.cmdCust.create(button)
+gui.F_GFMID.cmdCust.caption("^")
+gui.F_GFMID.cmdCust.visible(True)
+gui.F_GFMID.cmdCust.size(315,300)
+gui.F_GFMID.cmdCust.zorder(0)
+gui.F_GFMID.cmdCust.position(4100,200)
+gui.F_GFMID.cmdCust.enabled(True)
+gui.F_GFMID.cmdCust.parent("frmid")
+gui.F_GFMID.cmdCust.fontname("Tahoma")
+gui.F_GFMID.cmdCust.fontsize(8)
+gui.F_GFMID.cmdCust.event(click,cmdcust_click)
+gui.F_GFMID.cmdCust.disableonclick(20)
+gui.F_GFMID.lblBox.create(label,"Container",True,1935,255,1,0,600,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblBox.parent("frmid")
+gui.F_GFMID.txtBox.create(textbox,"",True,1695,300,0,0,800,True,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtBox.parent("frmid")
+gui.F_GFMID.txtBox.numericonly(2)
+gui.F_GFMID.txtBox.maxLength(7)
+gui.F_GFMID.lblPallet.create(label,"Master Label",True,1935,255,1,1755,600,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblPallet.parent("frmid")
+gui.F_GFMID.txtPallet.create(textbox,"",True,1740,300,0,1755,800,True,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtPallet.parent("frmid")
+gui.F_GFMID.txtPallet.numericonly(2)
+gui.F_GFMID.txtPallet.maxLength(8)
+gui.F_GFMID.lblShip.create(label,"Shipment ID",True,1935,255,1,3560,600,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblShip.parent("frmid")
+gui.F_GFMID.txtShip.create(textbox,"",True,1590,300,0,3560,800,True,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtShip.parent("frmid")
+gui.F_GFMID.txtShip.numericonly(2)
+gui.F_GFMID.cmdSubmit.create(button)
+gui.F_GFMID.cmdSubmit.caption("Submit")
+gui.F_GFMID.cmdSubmit.visible(True)
+gui.F_GFMID.cmdSubmit.size(1000,375)
+gui.F_GFMID.cmdSubmit.zorder(0)
+gui.F_GFMID.cmdSubmit.position(200,3200)
+gui.F_GFMID.cmdSubmit.enabled(True)
+gui.F_GFMID.cmdSubmit.fontname("Tahoma")
+gui.F_GFMID.cmdSubmit.fontsize(8)
+gui.F_GFMID.cmdSubmit.event(click,cmdsubmit_click)
+gui.F_GFMID.cmdSubmit.disableonclick(20)
+gui.F_GFMID.lblPrefix.create(label,"Prefix",True,1935,255,1,4470,0,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblPrefix.parent("frmid")
+gui.F_GFMID.txtPrefix.create(textbox,"",True,645,300,0,4485,200,True,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtPrefix.parent("frmid")
+gui.F_GFMID.txtPrefix.maxLength(3)
+gui.F_GFMID.lblDefCID.create(label,"Default Container Label Report ID",True,2595,255,1,0,0,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblDefCID.parent("frmdefault")
+gui.F_GFMID.lblDefMID.create(label,"Default Master Label Report ID",True,2550,255,1,2700,0,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblDefMID.parent("frmdefault")
+gui.F_GFMID.txtDefCID.create(textbox,"",True,2160,300,0,0,200,False,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtDefCID.parent("frmdefault")
+gui.F_GFMID.txtDefCID.numericonly(2)
+gui.F_GFMID.txtDefCID.maxLength(6)
+gui.F_GFMID.txtDefMID.create(textbox,"",True,2160,300,0,2700,200,False,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtDefMID.parent("frmdefault")
+gui.F_GFMID.txtDefMID.numericonly(2)
+gui.F_GFMID.txtDefMID.maxLength(6)
+gui.F_GFMID.lblCId.create(label,"Container Label Report ID",True,1935,255,1,0,1200,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblCId.parent("frmid")
+gui.F_GFMID.lblMID.create(label,"Master Label Report ID",True,1935,255,1,2700,1200,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lblMID.parent("frmid")
+gui.F_GFMID.txtCID.create(textbox,"",True,2160,300,0,0,1400,False,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtCID.parent("frmid")
+gui.F_GFMID.txtCID.numericonly(2)
+gui.F_GFMID.txtCID.maxLength(6)
+gui.F_GFMID.txtMID.create(textbox,"",True,2160,300,0,2700,1400,False,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtMID.parent("frmid")
+gui.F_GFMID.txtMID.numericonly(2)
+gui.F_GFMID.txtMID.maxLength(6)
+gui.F_GFMID.cmdCID.create(button)
+gui.F_GFMID.cmdCID.caption("^")
+gui.F_GFMID.cmdCID.visible(True)
+gui.F_GFMID.cmdCID.size(315,300)
+gui.F_GFMID.cmdCID.zorder(0)
+gui.F_GFMID.cmdCID.position(2190,1400)
+gui.F_GFMID.cmdCID.enabled(True)
+gui.F_GFMID.cmdCID.parent("frmid")
+gui.F_GFMID.cmdCID.fontname("Tahoma")
+gui.F_GFMID.cmdCID.fontsize(8)
+gui.F_GFMID.cmdCID.event(click,cmdLabel_ID)
+gui.F_GFMID.cmdMID.create(button)
+gui.F_GFMID.cmdMID.caption("^")
+gui.F_GFMID.cmdMID.visible(True)
+gui.F_GFMID.cmdMID.size(315,300)
+gui.F_GFMID.cmdMID.zorder(0)
+gui.F_GFMID.cmdMID.position(4900,1400)
+gui.F_GFMID.cmdMID.enabled(True)
+gui.F_GFMID.cmdMID.parent("frmid")
+gui.F_GFMID.cmdMID.fontname("Tahoma")
+gui.F_GFMID.cmdMID.fontsize(8)
+gui.F_GFMID.cmdMID.event(click,cmdLabel_ID)
+gui.F_GFMID.cmdDefCID.create(button)
+gui.F_GFMID.cmdDefCID.caption("^")
+gui.F_GFMID.cmdDefCID.visible(True)
+gui.F_GFMID.cmdDefCID.size(315,300)
+gui.F_GFMID.cmdDefCID.zorder(0)
+gui.F_GFMID.cmdDefCID.position(2190,200)
+gui.F_GFMID.cmdDefCID.enabled(True)
+gui.F_GFMID.cmdDefCID.parent("frmdefault")
+gui.F_GFMID.cmdDefCID.fontname("Tahoma")
+gui.F_GFMID.cmdDefCID.fontsize(8)
+gui.F_GFMID.cmdDefCID.event(click,cmdLabel_ID)
+gui.F_GFMID.cmdDefMID.create(button)
+gui.F_GFMID.cmdDefMID.caption("^")
+gui.F_GFMID.cmdDefMID.visible(True)
+gui.F_GFMID.cmdDefMID.size(315,300)
+gui.F_GFMID.cmdDefMID.zorder(0)
+gui.F_GFMID.cmdDefMID.position(4900,200)
+gui.F_GFMID.cmdDefMID.enabled(True)
+gui.F_GFMID.cmdDefMID.parent("frmdefault")
+gui.F_GFMID.cmdDefMID.fontname("Tahoma")
+gui.F_GFMID.cmdDefMID.fontsize(8)
+gui.F_GFMID.cmdDefMID.event(click,cmdLabel_ID)
+gui.F_GFMID.chkDupLbl.create(checkbox)
+gui.F_GFMID.chkDupLbl.caption("Print Duplicate Container Labels")
+gui.F_GFMID.chkDupLbl.visible(True)
+gui.F_GFMID.chkDupLbl.size(2610,255)
+gui.F_GFMID.chkDupLbl.zorder(0)
+gui.F_GFMID.chkDupLbl.position(200,2800)
+gui.F_GFMID.chkDupLbl.enabled(True)
+gui.F_GFMID.chkDupLbl.alignment(0)
+gui.F_GFMID.chkDupLbl.fontname("Tahoma")
+gui.F_GFMID.chkDupLbl.fontsize(8)
+gui.F_GFMID.lbl11.create(label,"Default Container Batch Label Report ID",True,3135,255,1,5400,0,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lbl11.parent("frmdefault")
+gui.F_GFMID.lbl12.create(label,"Container Batch Label Report ID",True,2505,255,1,5400,1200,True,0,Tahoma,8,-2147483633,0)
+gui.F_GFMID.lbl12.parent("frmid")
+gui.F_GFMID.txtDefBCID.create(textbox,"",True,2160,300,0,5400,200,False,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtDefBCID.parent("frmdefault")
+gui.F_GFMID.cmdDefBCID.create(button)
+gui.F_GFMID.cmdDefBCID.caption("^")
+gui.F_GFMID.cmdDefBCID.visible(True)
+gui.F_GFMID.cmdDefBCID.size(315,300)
+gui.F_GFMID.cmdDefBCID.zorder(0)
+gui.F_GFMID.cmdDefBCID.position(7600,200)
+gui.F_GFMID.cmdDefBCID.enabled(True)
+gui.F_GFMID.cmdDefBCID.parent("frmdefault")
+gui.F_GFMID.cmdDefBCID.fontname("Tahoma")
+gui.F_GFMID.cmdDefBCID.fontsize(8)
+gui.F_GFMID.cmdDefBCID.event(click,cmdLabel_ID)
+gui.F_GFMID.txtBCID.create(textbox,"",True,2160,300,0,5400,1400,False,0,Tahoma,8,-2147483643,1)
+gui.F_GFMID.txtBCID.parent("frmid")
+gui.F_GFMID.cmdBCID.create(button)
+gui.F_GFMID.cmdBCID.caption("^")
+gui.F_GFMID.cmdBCID.visible(True)
+gui.F_GFMID.cmdBCID.size(315,300)
+gui.F_GFMID.cmdBCID.zorder(0)
+gui.F_GFMID.cmdBCID.position(7600,1400)
+gui.F_GFMID.cmdBCID.enabled(True)
+gui.F_GFMID.cmdBCID.parent("frmid")
+gui.F_GFMID.cmdBCID.fontname("Tahoma")
+gui.F_GFMID.cmdBCID.fontsize(8)
+gui.F_GFMID.cmdBCID.event(click,cmdLabel_ID)
+gui.F_GFMID.chkOver.create(checkbox)
+gui.F_GFMID.chkOver.caption("Override Lot/Quantity Validation")
+gui.F_GFMID.chkOver.visible(True)
+gui.F_GFMID.chkOver.size(2715,255)
+gui.F_GFMID.chkOver.zorder(0)
+gui.F_GFMID.chkOver.position(2900,2800)
+gui.F_GFMID.chkOver.enabled(True)
+gui.F_GFMID.chkOver.alignment(0)
+gui.F_GFMID.chkOver.fontname("Tahoma")
+gui.F_GFMID.chkOver.fontsize(8)
+gui.F_GFMID.txtDefCID.tabstop(True)
+gui.F_GFMID.txtDefCID.tabindex(1)
+gui.F_GFMID.cmdDefCID.tabstop(True)
+gui.F_GFMID.cmdDefCID.tabindex(2)
+gui.F_GFMID.txtDefMID.tabstop(True)
+gui.F_GFMID.txtDefMID.tabindex(3)
+gui.F_GFMID.cmdDefMID.tabstop(True)
+gui.F_GFMID.cmdDefMID.tabindex(4)
+gui.F_GFMID.txtCustName.tabstop(True)
+gui.F_GFMID.txtCustName.tabindex(5)
+gui.F_GFMID.txtCudtNo.tabstop(True)
+gui.F_GFMID.txtCudtNo.tabindex(6)
+gui.F_GFMID.cmdCust.tabstop(True)
+gui.F_GFMID.cmdCust.tabindex(7)
+gui.F_GFMID.txtPrefix.tabstop(True)
+gui.F_GFMID.txtPrefix.tabindex(8)
+gui.F_GFMID.txtBox.tabstop(True)
+gui.F_GFMID.txtBox.tabindex(9)
+gui.F_GFMID.txtPallet.tabstop(True)
+gui.F_GFMID.txtPallet.tabindex(10)
+gui.F_GFMID.txtShip.tabstop(True)
+gui.F_GFMID.txtShip.tabindex(11)
+gui.F_GFMID.txtCID.tabstop(True)
+gui.F_GFMID.txtCID.tabindex(12)
+gui.F_GFMID.cmdCID.tabstop(True)
+gui.F_GFMID.cmdCID.tabindex(13)
+gui.F_GFMID.txtMID.tabstop(True)
+gui.F_GFMID.txtMID.tabindex(14)
+gui.F_GFMID.cmdMID.tabstop(True)
+gui.F_GFMID.cmdMID.tabindex(15)
+gui.F_GFMID.cmdSubmit.tabstop(True)
+gui.F_GFMID.cmdSubmit.tabindex(16)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: CHANDANA
+'Project Start Date: 6/3/2011
+V.Local.sSql.Declare(String)
+
+'Open the Database connection
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'Check if the table exists
+F.Intrinsic.Control.CallSub(Table_exists)
+
+'Disable the Customer Details
+Gui.F_GFMID.frmCust.Enabled(false)
+
+'Display the default IDs in the form
+V.Local.sSql.Set("select * from ATG_GFM_ID where Customer='-1' ")
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rstD",V.Local.sSql)
+
+F.Intrinsic.Control.If(V.ODBC.con!rstD.EOF,=,False)
+	Gui.F_GFMID.txtDefCID.Text(V.ODBC.con!rstD.FieldVal!BoxRptID)
+	Gui.F_GFMID.txtDefMID.Text(V.ODBC.con!rstD.FieldVal!PalletRptId)
+	Gui.F_GFMID.txtDefBCID.Text(V.ODBC.con!rstD.FieldVal!BatchBoxRptId)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstD.Close
+
+'Display the form
+Gui.F_GFMID..Show
+
+Program.Sub.Main.End
+
+program.sub.unload.start
+
+'Terminate the Database Connection
+F.ODBC.Connection!Con.Close
+
+'Unload the Form
+F.Intrinsic.Control.End
+
+program.sub.unload.end
+
+program.sub.cmdcust_click.start
+V.Local.sRet.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sBoxID.Declare(String)
+V.Local.sPalletID.Declare(String)
+
+'Invoke the Customer Browser
+F.Intrinsic.UI.CommonBrowser(205,"",V.Local.sRet)
+
+'If the user selected no record, Exit the SUB
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'If customer selection is not null, clear the form Before displaying the Customer Details
+F.Intrinsic.Control.CallSub(Clear_form)
+
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+'Display the customer name and number in the respective fields
+Gui.F_GFMID.txtCudtNo.Text(V.Local.sRet(0))
+Gui.F_GFMID.txtCustName.Text(V.Local.sRet(1))
+
+'---## If the Customer is in the Table, Display the details ##--
+F.Intrinsic.String.Concat("Select * from ATG_GFM_ID where Customer='",V.local.sRet(0),"'",V.local.ssql)
+'Open the recordset
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	'Display the box, Pallet and Shipment numbers
+	V.Local.sBoxID.Set(V.ODBC.con!rst.FieldVal!BoxID)
+	F.Intrinsic.String.Right(V.Local.sBoxID,7,V.Local.sBoxID)
+	Gui.F_GFMID.txtBox.Text(V.Local.sBoxID)
+	Gui.F_GFMID.txtPrefix.Text(V.ODBC.con!rst.FieldVal!Prefix)
+	V.Local.sPalletID.Set(V.ODBC.con!rst.FieldVal!PalletID)
+	F.Intrinsic.String.Right(V.Local.sPalletID,7,V.Local.sPalletID)
+	Gui.F_GFMID.txtPallet.Text(V.Local.sPalletID)
+	Gui.F_GFMID.txtShip.Text(V.ODBC.con!rst.FieldVal!ShipID)
+	Gui.F_GFMID.txtCID.Text(V.ODBC.con!rst.FieldVal!BoxRptID)
+	Gui.F_GFMID.txtMID.Text(V.ODBC.con!rst.FieldVal!PalletRptID)
+	Gui.F_GFMID.txtBCID.Text(V.ODBC.con!rst.FieldVal!BatchBoxRptID)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.FieldVal!DupLabels,=,True)
+		Gui.F_GFMID.chkDupLbl.Value(1)
+	F.Intrinsic.Control.Else
+		Gui.F_GFMID.chkDupLbl.Value(0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.ODBC.con!rst.FieldVal!Override,=,True)
+		Gui.F_GFMID.chkOver.Value(1)
+	F.Intrinsic.Control.Else
+		Gui.F_GFMID.chkOver.Value(0)
+	F.Intrinsic.Control.endif
+F.Intrinsic.Control.EndIf
+
+F.ODBC.con!rst.Close
+
+program.sub.cmdcust_click.end
+
+program.sub.cmdsubmit_click.start
+V.Local.sSql.Declare(String)
+V.Local.sCust.Declare(String)
+V.Local.iNo.Declare(Long)
+V.Local.sID.Declare(String)
+
+'Save the Default Report Lablels
+F.Intrinsic.Control.CallSub(Default_repid)
+
+'Set the Customer ID to local variable
+V.Local.sCust.Set(V.Screen.F_GFMID!txtCudtNo.Text)
+
+'If the Customer number is "", Exit the sub
+F.Intrinsic.Control.If(V.Local.sCust,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Concat("Select * from ATG_GFM_ID where Customer='",V.local.sCust,"'",V.Local.sSql)
+'Open the Recordset
+F.ODBC.Connection!con.OpenLocalRecordsetRW("rstCust",V.Local.sSql)
+
+'If no record s are found
+F.Intrinsic.Control.If(V.ODBC.con!rstCust.EOF,=,True)
+	'Add New customer
+	F.ODBC.con!rstCust.AddNew
+	F.ODBC.con!rstCust.Set!Customer(V.Local.sCust)
+F.Intrinsic.Control.EndIf
+'Add/Update the Other details
+
+'Set the Prefix
+V.Local.sPrefix.Declare(String)
+V.Local.sPrefix.Set(V.Screen.F_GFMID!txtPrefix.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sPrefix,=,"")
+	V.Local.sPrefix.Set("000")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.LPad(V.Local.sPrefix,0,3,V.Local.sPrefix)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstCust.Set!Prefix(V.Local.sPrefix)
+
+'Set the Box/Container Number
+V.Local.iNo.Set(V.Screen.F_GFMID!txtBox.Text.Trim)
+'If the Box ID = "", set it to 1
+F.Intrinsic.Control.If(V.Local.iNo,=,0)
+	V.Local.iNo.Set(1)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.LPad(V.Local.iNo,0,8,V.Local.sID)
+F.Intrinsic.String.Concat("S",V.Local.sPrefix,V.Local.sID,V.Local.sID)
+F.ODBC.con!rstCust.Set!BoxID(V.Local.sID)
+
+'Set the Pallet/Master Label number
+V.Local.iNo.Set(V.Screen.F_GFMID!txtPallet.Text.Trim)
+'If the Pallet ID = "", set it to 1
+F.Intrinsic.Control.If(V.Local.iNo,=,0)
+	V.Local.iNo.Set(1)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.LPad(V.Local.iNo,0,7,V.Local.sID)
+F.Intrinsic.String.Concat("S",V.Local.sPrefix,"9",V.Local.sID,V.Local.sID)
+F.ODBC.con!rstCust.Set!PalletID(V.Local.sID)
+
+'Set the Shipment Number
+V.Local.iNo.Set(V.Screen.F_GFMID!txtShip.Text)
+'If the Shipment ID = "", set it to 1
+F.Intrinsic.Control.If(V.Local.iNo,=,0)
+	V.Local.iNo.Set(1)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstCust.Set!ShipID(V.Local.iNo)
+
+F.ODBC.con!rstCust.Set!BoxRptID(V.Screen.F_GFMID!txtCID.Text)
+F.ODBC.con!rstCust.Set!PalletRptID(V.Screen.F_GFMID!txtMID.Text)
+F.ODBC.con!rstCust.set!BatchBoxRptID(V.Screen.F_GFMID!txtBCID.Text)
+F.ODBC.con!rstCust.Set!DupLabels(V.Screen.F_GFMID!chkDupLbl.Value)
+F.ODBC.con!rstCust.Set!Override(V.Screen.F_GFMID!chkOver.Value)
+
+'Update and close the Recordset
+F.ODBC.con!rstCust.Update
+F.ODBC.con!rstCust.Close
+
+'Clear the form for the next user submission
+F.Intrinsic.Control.CallSub(Clear_form)
+
+program.sub.cmdsubmit_click.end
+
+Program.Sub.Clear_Form.Start
+
+'Clear the form
+Gui.F_GFMID.txtCudtNo.Text("")
+Gui.F_GFMID.txtCustName.Text("")
+Gui.F_GFMID.txtPrefix.Text("")
+Gui.F_GFMID.txtBox.Text("")
+Gui.F_GFMID.txtPallet.Text("")
+Gui.F_GFMID.txtShip.Text("")
+Gui.F_GFMID.txtCID.Text("")
+Gui.F_GFMID.txtMID.Text("")
+Gui.F_GFMID.txtBCID.Text("")
+Gui.F_GFMID.chkDupLbl.Value(False)
+Gui.F_GFMID.chkOver.Value(false)
+
+Program.Sub.Clear_Form.End
+
+Program.Sub.Table_Exists.Start
+V.Local.bRet.Declare(Boolean)
+
+'Check to see if the Table Exists
+F.ODBC.Connection!con.TableExists("ATG_GFM_ID",V.Local.bRet)
+
+'If the Table Doesn't exist
+F.Intrinsic.Control.If(V.Local.bRet,=,False)
+	'Display the Error Message
+	F.Intrinsic.UI.Msgbox("Table ATG_GFM_ID Doesn't Exist","GFM")
+	'End the process
+	F.Intrinsic.Control.CallSub(Unload)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Table_Exists.End
+
+program.sub.cmdLabel_ID.start
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.CommonBrowser(90010,,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Args.ControlName,=,"CMDCID")
+		Gui.F_GFMID.txtCID.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.ControlName,=,"CMDMID")
+		Gui.F_GFMID.txtMID.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.ControlName,=,"CMDDEFCID")
+		Gui.F_GFMID.txtDEFCID.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.ControlName,=,"CMDDEFMID")
+		Gui.F_GFMID.txtDefMID.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.ControlName,=,"CMDDEFBCID")
+		Gui.F_GFMID.txtDefBCID.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.ControlName,=,"CMDBCID")
+		Gui.F_GFMID.txtBCID.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdLabel_ID.end
+
+Program.Sub.Default_RepID.Start
+V.Local.sSql.Declare(String)
+V.Local.sCust.Declare(String)
+
+V.Local.sCust.Set("-1")
+V.Local.sSql.Set("select * from ATG_GFM_ID where Customer='-1'")
+F.ODBC.Connection!con.OpenLocalRecordsetRW("rstDef",V.Local.sSql)
+
+F.Intrinsic.Control.If(V.ODBC.con!rstDef.EOF,=,True)
+	F.ODBC.con!rstDef.AddNew
+	F.ODBC.con!rstDef.Set!Customer(V.Local.sCust)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstDef.Set!BoxRptID(V.Screen.F_GFMID!txtDefCID.Text)
+F.ODBC.con!rstDef.Set!PalletRptId(V.Screen.F_GFMID!txtDefMID.Text)
+f.ODBC.con!rstDef.set!BatchBoxRptID(V.Screen.F_GFMID!txtDefBCID.Text)
+f.ODBC.con!rstDef.Set!DupLabels(0)
+F.ODBC.con!rstDef.Update
+F.ODBC.con!rstDef.Close
+
+
+Program.Sub.Default_RepID.End
+
+
